@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #6d28d9;
+  --color-brand-light: #8b5cf6;
+  --color-brand-dark: #5b21b6;
+  --color-success: #10b981;
+  --color-success-light: #34d399;
+  --color-locked: #6b7280;
+  --color-locked-light: #9ca3af;
+  --color-surface: #0f0f14;
+  --color-surface-raised: #1a1a24;
+  --color-surface-hover: #22222e;
+  --color-border: #2a2a3a;
+  --color-text-primary: #f1f1f4;
+  --color-text-secondary: #a0a0b4;
+  --color-text-muted: #6b6b80;
+  --color-gold: #f59e0b;
+  --color-gold-light: #fbbf24;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+/* Pulse animation for active step */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(139, 92, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+.pulse-active {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Confetti keyframes */
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out forwards;
+}
